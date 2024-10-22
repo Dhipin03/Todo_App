@@ -51,7 +51,6 @@ class TodoScreenController {
         [email, password]);
     if (loginresult.isNotEmpty) {
       currentUser = loginresult.first;
-      islogined = true;
       return true;
     }
     islogined = false;
@@ -65,6 +64,7 @@ class TodoScreenController {
     await mydatabase.rawDelete(
         'DELETE FROM todotask WHERE id = ? AND user_id = ?',
         [taskId, currentUser['id']]);
+    await gettask();
   }
 
   static Future logout() async {

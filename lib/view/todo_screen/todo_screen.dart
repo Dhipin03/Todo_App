@@ -114,9 +114,9 @@ class _TodoScreenState extends State<TodoScreen> {
                                   itemBuilder: (context, index) => ListTile(
                                     leading: GestureDetector(
                                       onTap: () async {
-                                        // await TodoScreenController.deletetask(
-                                        //     TodoScreenController.tasklist[index]
-                                        //         ['id']);
+                                        await TodoScreenController.deletetask(
+                                            TodoScreenController.tasklist[index]
+                                                ['id']);
                                         setState(() {});
                                       },
                                       child: CircleAvatar(
